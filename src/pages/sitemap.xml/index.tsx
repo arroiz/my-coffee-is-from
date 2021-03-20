@@ -7,12 +7,17 @@ import { GET_PLACES } from 'graphql/queries'
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { places } = await client.request<GetPlacesQuery>(GET_PLACES)
 
-  const pages = places.map(({ slug }) => ({
+  const portuguesePages = places.map(({ slug }) => ({
     loc: `https://mycoffeeisfrom.com/place/${slug}`,
     lastmod: new Date().toISOString()
   }))
 
-  pages.push(
+  const englishPages = places.map(({ slug }) => ({
+    loc: `https://mycoffeeisfrom.com/en/place/${slug}`,
+    lastmod: new Date().toISOString()
+  }))
+
+  const staticPages = [
     {
       loc: `https://mycoffeeisfrom.com/`,
       lastmod: new Date().toISOString()
@@ -20,8 +25,18 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     {
       loc: `https://mycoffeeisfrom.com/about`,
       lastmod: new Date().toISOString()
+    },
+    {
+      loc: `https://mycoffeeisfrom.com/en`,
+      lastmod: new Date().toISOString()
+    },
+    {
+      loc: `https://mycoffeeisfrom.com/en/about`,
+      lastmod: new Date().toISOString()
     }
-  )
+  ]
+
+  const pages = [...staticPages, ...portuguesePages, ...englishPages]
 
   return getServerSideSitemap(ctx, pages)
 }
