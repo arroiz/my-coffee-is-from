@@ -25,7 +25,8 @@ export async function getStaticPaths() {
   return { paths, fallback: true }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  client.setHeader('gcms-locales', locale?.replace('-', '_') || '')
   const { place } = await client.request<GetPlaceBySlugQuery>(
     GET_PLACE_BY_SLUG,
     {
