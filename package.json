@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-boilerplate",
+  "name": "my-coffee-is-from",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,8 @@
     "test:watch": "jest --watch",
     "generate": "yarn plop --plopfile ./generators/plopfile.js",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -s ./public"
+    "build-storybook": "build-storybook -s ./public",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "husky": {
     "hooks": {
@@ -25,9 +26,14 @@
     ]
   },
   "dependencies": {
+    "@styled-icons/evaicons-outline": "^10.18.0",
+    "graphql": "^15.5.0",
+    "graphql-request": "^3.4.0",
     "leaflet": "^1.7.1",
     "next": "^10.0.8",
     "next-pwa": "^3.1.4",
+    "next-seo": "^4.20.0",
+    "nextjs-progressbar": "^0.0.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-leaflet": "^3.1.0",
@@ -36,6 +42,10 @@
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-typescript": "^7.10.4",
+    "@graphql-codegen/add": "^2.0.2",
+    "@graphql-codegen/cli": "1.21.3",
+    "@graphql-codegen/typescript": "^1.21.1",
+    "@graphql-codegen/typescript-operations": "^1.17.15",
     "@storybook/addon-essentials": "^6.0.21",
     "@storybook/react": "^6.0.21",
     "@testing-library/jest-dom": "^5.11.4",
