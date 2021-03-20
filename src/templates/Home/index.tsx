@@ -14,14 +14,14 @@ export default function HomeTemplate({ places }: MapProps) {
       <NextSeo
         title="My Coffee Is From"
         description="Conheça mais sobre os cafés que você consome."
-        canonical="https://cademeucafe.com"
+        canonical="https://mycoffeeisfrom.com"
         openGraph={{
-          url: 'https://cademeucafe.com',
+          url: 'https://mycoffeeisfrom.com',
           title: 'My Coffee Is From',
           description: 'Conheça mais sobre os cafés que você consome.',
           images: [
             {
-              url: 'https://cademeucafe.com/img/cover.png',
+              url: 'https://mycoffeeisfrom.com/img/cover.png',
               width: 1280,
               height: 720,
               alt: 'My Coffee Is From'
