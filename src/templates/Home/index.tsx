@@ -12,22 +12,22 @@ export default function HomeTemplate({ places }: MapProps) {
   return (
     <>
       <NextSeo
-        title="Cade Meu Café"
+        title="My Coffee Is From"
         description="Conheça mais sobre os cafés que você consome."
         canonical="https://cademeucafe.com"
         openGraph={{
           url: 'https://cademeucafe.com',
-          title: 'My Trips',
+          title: 'My Coffee Is From',
           description: 'Conheça mais sobre os cafés que você consome.',
           images: [
             {
               url: 'https://cademeucafe.com/img/cover.png',
               width: 1280,
               height: 720,
-              alt: 'My Trips'
+              alt: 'My Coffee Is From'
             }
           ],
-          site_name: 'Cade Meu Café'
+          site_name: 'My Coffee Is From'
         }}
       />
       <LinkWrapper href="/about">
